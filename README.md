@@ -2,5 +2,5 @@
 
 Go to the folder -> right click -> Select Open with Visual Studio code
 
-Open terminal and run belo command
+Open terminal and run below command
 **npm install react-scripts --save**
