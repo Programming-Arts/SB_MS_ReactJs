@@ -1,4 +1,4 @@
-package com.sit.epfservice;
+package com.sit.empservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

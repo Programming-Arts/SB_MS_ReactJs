@@ -27,19 +27,21 @@ public class MyEmployeeService {
 	// for saving employee
 	public Employee saveEmployeeDetails(Employee emp) {
 		emp.setIsActive(true);
-		// details related to EPF
-		String epfAccNo = emp.getName() + "00EPF" + emp.getAge();
-		emp.setEpfAccNo(epfAccNo);
-		emp.setEpfStatus(true);
-		// salary calculation based on experience
-		// call salary service to get salary basedon year of experince
-
+//		 call salary service to get salary based on year of experince
 		ResponseEntity<Long> salaryFromSalService = rt
-				.getForEntity("http://localhost:9091/getSalaryByYoe/"+ emp.getYoe(), Long.class);
+				.getForEntity("http://localhost:9091/getSalaryByYoe/" + emp.getYoe(), Long.class);
 		Long salByExp = salaryFromSalService.getBody();
-		// setting salary coming from salary service
+//		 setting salary coming from salary service
 		emp.setSalary(salByExp);
+
+//		save employee details
 		Employee savedEmployee = repo.save(emp);
+//		get empID from savedEmployee and call epf service 
+//		by sending salary and empID
+		ResponseEntity<com.sit.bean.EmployeeEPFInfo> epfDetails = rt.getForEntity(
+				"http://localhost:9093/saveEpfDetails/" + savedEmployee.getSalary() + "/" + savedEmployee.getId(),
+				com.sit.bean.EmployeeEPFInfo.class);
+
 		return savedEmployee;
 	}
 
