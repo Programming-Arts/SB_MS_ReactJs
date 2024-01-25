@@ -1,4 +1,4 @@
-package com.sit.epfservice;
+package com.sit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

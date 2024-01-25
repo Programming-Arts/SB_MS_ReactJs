@@ -17,7 +17,6 @@ public class Employee {
 	private int id;
 	@Column(name = "emp_name")
 	private String name;
-
 	@Column(name = "contact")
 	private Long contact;
 	@Column(name = "age")
