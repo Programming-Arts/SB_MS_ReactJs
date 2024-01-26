@@ -12,10 +12,13 @@ public class NameController {
 
 	@Autowired
 	private Configurations configurations;
+	@Autowired
+	private MyProxyInterface interface1;
 
 	@RequestMapping("/getName")
 	public String getName() {
-		String envDetails=env.getProperty("spring.profiles.active");
-		return configurations.getName()+" "+envDetails;
+		String envDetails = env.getProperty("spring.profiles.active");
+		String surname = interface1.getName();
+		return configurations.getName() + " " + envDetails + "==>" + surname;
 	}
 }
