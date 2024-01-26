@@ -1,13 +1,13 @@
-package com.sit.insuranceservice;
+package com.sit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InsuranceServiceApplication {
+public class Ms1Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InsuranceServiceApplication.class, args);
+		SpringApplication.run(Ms1Application.class, args);
 	}
 
 }

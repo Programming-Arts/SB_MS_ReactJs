@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 @PropertySource("classpath:application.properties")
 public class ReadByPropertySource {
-	@Value("${my-details.name}")
+	@Value("${name}")
 	private String name;
 	@Value("${my-details.email}")
 	private String email;
