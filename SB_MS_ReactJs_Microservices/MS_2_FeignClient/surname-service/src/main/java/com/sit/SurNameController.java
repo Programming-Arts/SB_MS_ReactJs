@@ -6,17 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class NameController {
+public class SurNameController {
 	@Autowired
 	private Environment env;
 
 	@Autowired
 	private Configurations configurations;
 
-	@RequestMapping("/getName")
+	@RequestMapping("/getSurname")
 	public String getName() {
-//		String envDetails = env.getProperty("spring.profiles.active");
-
-		return configurations.getName();
+		return "Xyz";
 	}
 }
